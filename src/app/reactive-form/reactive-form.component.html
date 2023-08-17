@@ -1,0 +1,65 @@
+<div class="container-fluid">
+  <form class="my-3" [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+    <div formGroupName="userDetails">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          placeholder="Enter name" formControlName="userName">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group my-3">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          placeholder="Enter email" formControlName="email">
+        <small id="emailHelp" class="text-danger"
+          *ngIf="myReactiveForm.get('userDetails.email').invalid && myReactiveForm.get('userDetails.email').touched">Please
+          enter valid Email Id</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+          formControlName="password">
+        <small class="text-danger"
+          *ngIf="myReactiveForm.get('userDetails.password').invalid && myReactiveForm.get('userDetails.password').touched">Please
+          Enter password</small>
+        <!-- <small class="text-danger" *ngIf="myReactiveForm.get('password').invalid">Please Enter password</small> -->
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="">Topics</label>
+      <select name="" class="form-control" id="" formControlName="selectTopics">
+        <option value="{{topic}}" *ngFor="let topic of topics">{{topic}}</option>
+      </select>
+    </div>
+
+    <div class="form-group" formArrayName="skills">
+      <label for="exampleInputPassword1">Skills</label>
+      <ng-container class ="mt-2" *ngFor="let skillControl of myReactiveForm.get('skills')?.controls; index as i">
+        
+        <input type="text" class="form-control  mt-2" placeholder="Add Skills" formControlName={{i}}>
+      </ng-container>
+    
+      <button class="btn btn-primary mt-2" (click)="addSkillControl()"> + Add</button>
+    </div>
+
+    <div class="form-check" *ngFor="let gender of gender">
+      <input class="form-check-input" type="radio" id="{{gender.id}}" value="{{gender.gender}}"
+        formControlName="gender">
+      <label class="form-check-label" for="flexRadioDefault1">
+        {{gender.gender}}
+      </label>
+    </div>
+
+
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="checkBoxes">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+
+    
+    <button type="submit" [disabled]="myReactiveForm.invalid" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<!-- <p>{{this.abc[0].name}}</p> -->
+<!-- <div>{{this.message[0].name}}</div> -->

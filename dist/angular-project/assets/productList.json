@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "name": "Laptop1",
+      "price": "20000",
+      "description": "Laptop1 Des 1" 
+    },
+    {
+        "id": 2,
+      "name": "Laptop2",
+      "price": "200001",
+      "description": "Laptop1 Des 2" 
+      },
+      {
+        "id": 3,
+      "name": "Laptop3",
+      "price": "200003",
+      "description": "Laptop1 Des 3" 
+      },
+      {
+        "id": 4,
+      "name": "Laptop4",
+      "price": "200004",
+      "description": "Laptop1 Des 4" 
+      },
+      {
+        "id": 5,
+      "name": "Laptop5",
+      "price": "200005",
+      "description": "Laptop1 Des 5" 
+      },
+      {
+        "id": 6,
+        "name": "Laptop6",
+        "price": "200006",
+        "description": "Laptop1 Des 6" 
+      },
+      {
+        "id": 7,
+      "name": "Laptop7",
+      "price": "20007",
+      "description": "Laptop1 Des 7" 
+      },
+      {
+        "id": 8,
+      "name": "Laptop8",
+      "price": "200008",
+      "description": "Laptop1 Des 8" 
+      },
+      {
+        "id": 9,
+      "name": "Laptop9",
+      "price": "200009",
+      "description": "Laptop1 Des 9" 
+      },
+      {
+        "id": 10,
+      "name": "Laptop10",
+      "price": "200010",
+      "description": "Laptop1 Des 10" 
+      }
+
+  ]

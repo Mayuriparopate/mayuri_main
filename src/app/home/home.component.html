@@ -1,0 +1,15 @@
+<h1 colorChange>Welcome to Programming!</h1>
+
+<!-- <input type='text' [(ngModel)]="userName"> -->
+<input type="text" [(ngModel)]="userInput" name="userInputField"> 
+<button class="btn btn-primary" (click)="addUser()">Add me</button>
+<p> {{remainingLength}} remaining out of remaining task {{userListLength}}</p>
+<ul *ngFor="let item of userList; let i = index">
+    <li (click)="isStrike(item,i)" [ngClass]="{ 'strikethrough': item.isSelectedval}" >{{item.value}}</li>
+</ul>
+<p appTemDirective id="hello">Hello</p>
+<button class="btn btn-primary" (click)="login()">TDF form</button>
+<button class="btn btn-primary" (click)="reactiveForm()">Reactive form</button>
+<button class="btn btn-primary" (click)="userListData()">UserList</button>
+
+<app-product-list></app-product-list>
